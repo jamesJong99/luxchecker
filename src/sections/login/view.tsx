@@ -18,9 +18,9 @@ export default function LoginView() {
     router.push("/dashboard");
   }
   return (
-    <Stack direction={"column"} gap={2.5} bgcolor={"#1D2024"}>
+    <Stack direction={"column"} bgcolor={"#1D2024"} sx={{ minHeight: "100vh" }}>
 
-      <Stack direction={"row"} justifyContent={"center"} gap={2.5} pt={2.5}>
+      <Stack direction={"row"} justifyContent={"center"} gap={2} sx={{ marginTop: "10px" }}>
 
         <Link href="https://briansclub.cm/">
           <Image
@@ -46,6 +46,8 @@ export default function LoginView() {
             height={"40"}
           />
         </Link>
+      </Stack>
+      <Stack direction={"row"} justifyContent={"center"} gap={2.5}>
         <Link href="https://jerrys.vc/reg/?ref=W1BDNVBUX29N655M">
           <Image
             src={"/assets/images/bkj.gif"}
@@ -54,8 +56,6 @@ export default function LoginView() {
             height={"40"}
           />
         </Link>
-      </Stack>
-      <Stack direction={"row"} justifyContent={"center"} gap={2.5}>
         <Link href="https://tox3.in/login">
           <Image
             src={"/assets/images/bkt.gif"}
@@ -138,7 +138,7 @@ export default function LoginView() {
           luxchkr35xj7gis6u4xu67f4theumzhbw43pebz6lc6qsy7ahkzfmzqd.onion
         </Link>
       </Stack>
-      <Stack direction={"row"} margin={"auto"}>
+      <Stack direction={"row"} margin={"0 auto"}>
         <Box paddingTop={"8px"} marginRight={"6px"}>
           <Image
             src={"/assets/images/closed-captioning-regular.svg"}
@@ -156,7 +156,7 @@ export default function LoginView() {
         </Typography>
       </Stack>
       <Stack
-        margin={"auto"}
+        margin={"0 auto"}
         borderColor={"#CCC"} border={"1px"}
         padding={"6px"} bgcolor={"#394557"}
         width={"375px"} height={"450px"}
@@ -181,10 +181,13 @@ export default function LoginView() {
               borderColor={"#d5e3ef"}
               fontWeight={"lighter"}
               color={"#478FCA"}>
+
               <SvgIcon
                 component={LocalCafeIcon}
                 color="success" />
-              Please Enter Your Information
+              <span style={{ marginTop: "-5px" }}>
+                Please Enter Your Information
+              </span>
             </Typography>
             <Box component="form" noValidate sx={{ mt: 1 }}>
               <TextField
@@ -192,6 +195,7 @@ export default function LoginView() {
                 fullWidth={true}
                 variant="outlined"
                 placeholder="Username"
+                sx={{ fontSize: "12px" }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -246,12 +250,15 @@ export default function LoginView() {
                 <Button
                   // type="submit"
                   variant="contained"
-                  style={{fontFamily:"Open Sans"}}
+                  style={{ fontFamily: "Open Sans" ,backgroundColor:"#428BCA",border:"none"}}
                   sx={{ mt: 3, mb: 2 }}
                   onClick={login}
                 >
-                  <FontAwesomeIcon style={{ marginRight: "4px" }} icon={faKey} className="fas fa-rotate-270"
-                />Login
+                  <Stack direction={"row"} alignItems={"center"}>
+                    <FontAwesomeIcon style={{ marginRight: "4px" }} icon={faKey} className="fas fa-rotate-270"
+                    />
+                    <span>Login</span>
+                  </Stack>
                 </Button>
               </Stack>
             </Box>
@@ -265,6 +272,7 @@ export default function LoginView() {
           >
             <Link href="#">
               <Typography
+                variant="subtitle2"
                 color={"#FE9"}
                 lineHeight={"50px"}>
                 <FontAwesomeIcon style={{ marginRight: "4px" }} icon={faArrowLeft} className="fas fa-check"
@@ -274,7 +282,8 @@ export default function LoginView() {
             </Link>
             <Link href="#">
               <Typography
-                color={"#FE9"}
+                variant="subtitle2"
+                color={"#CF7"}
                 lineHeight={"50px"}>
                 I want to register
                 <FontAwesomeIcon style={{ marginLeft: "4px" }} icon={faArrowRight} className="fas fa-check"

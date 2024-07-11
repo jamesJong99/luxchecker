@@ -9,6 +9,7 @@ import * as React from 'react';
 import Alert from '@mui/material/Alert';
 export default function DashboardView() {
     return (
+        
         <Stack padding={2}>
             <DashboardModal/>  
             <Box>

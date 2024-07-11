@@ -8,12 +8,12 @@ export const metadata = {
 
 export default function Page() {
     return <>
-        <Header />
+        <Nav>
         <Stack direction={"row"}>
             <Box>
-                {/* <Nav /> */}
             </Box>
             <DashboardView />
         </Stack>
+        </Nav>
     </>
 }

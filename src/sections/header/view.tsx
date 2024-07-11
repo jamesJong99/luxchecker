@@ -40,7 +40,9 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor:"#438EB9",'& .MuiAppBar-root': {
+      borderRadius: '1px',
+    },}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -92,12 +94,7 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {/* {headerList.map((ind, item) => (
-                <MenuItem key={ind} onClick={handleCloseNavMenu}>
-                    <Image url={item.url} alt="" width={100} height="80" />
-                  <Typography textAlign="center">{item.name}</Typography>
-                </MenuItem>
-              ))} */}
+              
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />

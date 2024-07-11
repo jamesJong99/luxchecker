@@ -5,6 +5,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material";
 // import Header from './header';
+import Nav from "@/sections/header/nav";
 
 type Props = {
   children: React.ReactNode;
@@ -21,7 +22,10 @@ export default function AppMainLayout({ children }: Props) {
         maxWidth: "100%",
       }}
     >
+      <Nav>
       {children}
+      </Nav>
+
     </Box>
   );
 }

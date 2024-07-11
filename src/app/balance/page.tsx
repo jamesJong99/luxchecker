@@ -8,12 +8,13 @@ export const metadata = {
 
 export default function Balance() {
     return <>
-        <Header />
-        <Stack direction={"row"}>
-            <Box>
-                {/* <Nav /> */}
-            </Box>
-            <BalanceView />
-        </Stack>
+        <Nav>
+            <Stack direction={"row"}>
+                <Box>
+                    {/* <Nav /> */}
+                </Box>
+                <BalanceView />
+            </Stack>
+        </Nav>
     </>
 }
