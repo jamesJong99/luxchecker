@@ -18,7 +18,7 @@ export default function DashboaddModal() {
             {/* <TriggerButton type="button" onClick={handleOpen}>
         Open modal
       </TriggerButton> */}
-            <Modal
+            {(open?<Modal
                 aria-labelledby="keep-mounted-modal-title"
                 aria-describedby="keep-mounted-modal-description"
                 open={open}
@@ -44,7 +44,7 @@ export default function DashboaddModal() {
                     <Typography fontSize={"16px"} fontWeight={700} textAlign="center" marginTop={"2px"}>4: luxchkr35xj7gis6u4xu67f4theumzhbw43pebz6lc6qsy7ahkzfmzqd.onion (TOR v3)</Typography>
                     <Typography color={"#393939"} textAlign="center" marginTop={"20px"}>All other domains are SCAM/FRAUD. You will lose your account and your credits if you enter your login credentials into them.</Typography>
                 </ModalContent>
-            </Modal>
+            </Modal>:<></>)}
         </div>
     );
 }
