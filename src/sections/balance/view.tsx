@@ -23,7 +23,7 @@ export default function BalanceView() {
     const next = () => {
         setSuccess(1);
     }
-    return ((success ? <Stack style={{ marginTop: "20px" }} sx={{ borderColor: "#CCC" }} width={"90%"} border="1px solid" margin={"auto"}>
+    return ((!success ? <Stack style={{ marginTop: "20px", marginBottom: "60px" }} sx={{ borderColor: "#CCC" }} width={"90%"} border="1px solid" margin={"auto"}>
         <Typography width={"100%"} border="1px solid" borderColor={"#CCC"} display={"block"} fontFamily={"'Open Sans'"} bgcolor={"#F7F7F7"} color={"#669FC7"} minHeight={"38px"} paddingLeft={"12px"} lineHeight={"36px"} fontSize={"18px"}>
             Buy Credits
         </Typography>
@@ -82,8 +82,8 @@ export default function BalanceView() {
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
-                                value={"age"}
-                                label="Age"
+                                value={"10"}
+                                label="Select Coin"
                                 onChange={handleChange}
                                 size="small"
                                 defaultValue="10"
@@ -193,14 +193,14 @@ export default function BalanceView() {
             We also accept the following coins manually, please open a ticket for manual topup these coins:
             Avalanche <strong>(AVAX)</strong> - Cardano <strong>(ADA)</strong> - Dash <strong>(DASH)</strong> - Dogecoin <strong>(DOGE)</strong> - Ripple <strong>(XRP)</strong> - Tron <strong>(TRX)</strong>
         </Typography>
-        <Box marginX="5px" marginY={"40px"} borderTop={"1px solid"} borderColor={"#CCC"}>
+        <Box marginX="5px" marginTop={"20px"} borderTop={"1px solid"} borderColor={"#CCC"} display={"flex"} justifyContent={"end"}>
             <Link href="#successPart">
                 <Button
                     type="submit"
                     variant="contained"
                     style={{ fontFamily: "Open Sans" }}
-                    sx={{ mt: 3, mb: 2 }}
-                    onClick={next}
+                    sx={{ mt: 3, mb: 2, bgcolor:"#87BA21", borderRadius:"none" }}
+                    onClick={()=>next()}
                 >
                     Next
                     <FontAwesomeIcon style={{ marginLeft: "4px", marginTop: "5px" }} icon={faArrowRight} className="fas fa-check"
