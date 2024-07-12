@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { styled, css } from '@mui/system';
 import { Modal as BaseModal } from '@mui/base/Modal';
 import { Typography } from '@mui/material';
 
-export default function DashboardModal() {
+const DashboardModal = () => {
     const [open, setOpen] = React.useState(true);
     const handleClose = () => {
         setOpen(false)
@@ -44,19 +44,15 @@ export default function DashboardModal() {
     );
 }
 
-const Backdrop = React.forwardRef<
-    HTMLDivElement,
-    { open?: boolean; className: string }
->((props, ref) => {
-    const { open, className, ...other } = props;
+const Backdrop:React.FC = (props) => {
+    const { open, className, ...other }:any = props;
     return (
         <div
             className={clsx({ 'base-Backdrop-open': open }, className)}
-            ref={ref}
             {...other}
         />
     );
-});
+};
 
 const blue = {
     200: '#99CCFF',
@@ -168,3 +164,5 @@ const TriggerButton = styled('button')(
     }
   `,
 );
+
+export default DashboardModal

@@ -1,6 +1,5 @@
 "use client"
 import { Stack, Box } from "@mui/material"
-import CustomAlert from "@/components/CustomAlert"
 import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Typography } from '@mui/material';

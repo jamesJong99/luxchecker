@@ -1,5 +1,4 @@
 import BalanceView from "@/sections/balance/view";
-import Header from "@/sections/header/view";
 import Nav from "@/sections/header/nav";
 import { Stack, Box } from "@mui/material";
 export const metadata = {

@@ -1,20 +1,13 @@
 "use client"
 import { Stack, Box } from "@mui/material"
-import CustomAlert from "@/components/CustomAlert"
-import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
 import { Typography, Radio, RadioGroup, FormControlLabel, InputLabel, MenuItem, Select, Button } from '@mui/material';
 import Link from "next/link";
 
-import DashboardModal from "@/components/DashboardModal";
 import * as React from 'react';
-import Alert from '@mui/material/Alert';
-import { BorderClear } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faArrowRight, faCheck } from "@fortawesome/free-solid-svg-icons";
 import FormControl from '@mui/material/FormControl';
 
-import { payments } from "../../../utils/data";
-import next from "next";
 export default function BalanceView() {
     const [success, setSuccess] = React.useState(0)
     const handleChange = () => {
