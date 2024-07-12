@@ -6,18 +6,13 @@ import { Typography } from '@mui/material';
 
 export default function DashboaddModal() {
     const [open, setOpen] = React.useState(true);
-    // const handleOpen = () => setOpen(true);
     const handleClose = () => {
         setOpen(false)
     };
     React.useEffect(()=> {
-        // alert(open);
     }, [open])
     return (
         <div>
-            {/* <TriggerButton type="button" onClick={handleOpen}>
-        Open modal
-      </TriggerButton> */}
             {(open?<Modal
                 aria-labelledby="keep-mounted-modal-title"
                 aria-describedby="keep-mounted-modal-description"

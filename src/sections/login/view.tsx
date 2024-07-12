@@ -13,8 +13,8 @@ export default function LoginView() {
   const theme = useTheme();
   const router = useRouter();
 
-  const login = (e: Event) => {
-    e.preventDefault()
+  const login = () => {
+    // e.preventDefault()
     router.push("/dashboard");
   }
   return (
@@ -244,11 +244,11 @@ export default function LoginView() {
                 <Link>
                 </Link>
                 <Button
-                  type="submit"
+                  // type="submit"
                   variant="contained"
                   style={{fontFamily:"Open Sans"}}
                   sx={{ mt: 3, mb: 2 }}
-                  onClick={(e)=>login(e)}
+                  onClick={login}
                 >
                   <FontAwesomeIcon style={{ marginRight: "4px" }} icon={faKey} className="fas fa-rotate-270"
                 />Login
