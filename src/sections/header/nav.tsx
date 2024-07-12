@@ -183,8 +183,8 @@ export default function Nav({ children }: Props) {
                 alignItems={"center"}
                 divider={<Divider orientation="vertical" flexItem />}
               >
-                {listItems.map(item =>
-                  <Item>
+                {listItems.map((item, ind) =>
+                  <Item key={ind}>
                     <Stack sx={{ padding: 2 }} alignItems={"center"} direction={"row"}>
                       <Image
                         src={`/assets/images/${item.icon}`}

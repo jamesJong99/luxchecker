@@ -4,7 +4,7 @@ import { styled, css } from '@mui/system';
 import { Modal as BaseModal } from '@mui/base/Modal';
 import { Typography } from '@mui/material';
 
-export default function DashboaddModal() {
+export default function DashboardModal() {
     const [open, setOpen] = React.useState(true);
     const handleClose = () => {
         setOpen(false)
