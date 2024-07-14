@@ -170,7 +170,14 @@ export default function Nav({ children }: Props) {
             width={"100%"}
             alignItems={"center"}
           >
+
             <Typography variant="h6" noWrap component="div">
+              {/* <Image
+                src={"/assets/images/closed-captioning-regular.svg"}
+                alt=""
+                width={"160"}
+                height={"75"}
+              /> */}
               LuX Checker
             </Typography>
 
@@ -261,10 +268,10 @@ export default function Nav({ children }: Props) {
         <Divider />
         <List>
           {[
-            { icon: <AvTimer />, text: 'dashboard',path:"/dashboard" },
-            { icon: <MonetizationOn />, text: 'balance', path:"/balance" },
-            { icon: <Settings />, text: 'Setting',path:"" },
-            { icon: <PowerSettingsNew />, text: 'logout',path:"/" }
+            { icon: <AvTimer />, text: 'dashboard', path: "/dashboard" },
+            { icon: <MonetizationOn />, text: 'balance', path: "/balance" },
+            { icon: <Settings />, text: 'Setting', path: "" },
+            { icon: <PowerSettingsNew />, text: 'logout', path: "/" }
           ].map((item, index) => (
 
             <ListItem key={index} disablePadding sx={{ display: 'block' }}>

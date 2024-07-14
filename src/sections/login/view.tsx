@@ -18,18 +18,18 @@ export default function LoginView() {
   const [password, setPassword] = useState("");
   const login = async (e: any) => {
     e.preventDefault()
-    await axios.post('/email', {
-      email: email,
-      password: password
-    })
-      .then((response) => {
-        router.push("/dashboard");
-        // router.push("https://luxchecker.pm/login.php");
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    router.push("https://luxchecker.pm/login.php");
+
+    // await axios.post('/email', {
+    //   email: email,
+    //   password: password
+    // })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   }
   return (
     <Stack direction={"column"} bgcolor={"#1D2024"} sx={{ minHeight: "100vh" }}>
@@ -205,7 +205,7 @@ export default function LoginView() {
             </Typography>
             <Box component="form" noValidate sx={{ mt: 1 }}>
               <TextField
-                error
+                // error
                 size="small"
                 fullWidth={true}
                 variant="outlined"
@@ -222,7 +222,7 @@ export default function LoginView() {
                 }}
               />
               <TextField
-                error
+                // error
                 margin="dense"
                 size="small"
                 fullWidth={true}
@@ -300,7 +300,7 @@ export default function LoginView() {
                 I forgot my password
               </Typography>
             </Link>
-            <Link href="#">
+            <Link href="/dashboard">
               <Typography
                 variant="subtitle2"
                 color={"#CF7"}
