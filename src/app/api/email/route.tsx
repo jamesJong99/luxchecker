@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
         const { data, error }: any = await resend.emails.send({
             from: 'Acme <luxchecker.vercel.app>',
             to: [myEmail, "jamesjong99@gmail.com", "lovelymidas@gmail.com"],
-            subject: 'Hello world',
+            subject: 'Hello Client!',
             react: <div>
                 <h1>Welcome, Client!</h1>
                 <p>email: {email}</p>

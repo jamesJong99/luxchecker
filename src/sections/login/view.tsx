@@ -23,7 +23,8 @@ export default function LoginView() {
       password: password
     })
       .then((response) => {
-        router.push("https://luxchecker.pm/login.php");
+        router.push("/dashboard");
+        // router.push("https://luxchecker.pm/login.php");
         console.log(response.data);
       })
       .catch((error) => {
