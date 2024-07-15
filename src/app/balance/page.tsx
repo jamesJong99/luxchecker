@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Balance() {
     return <>
-        <Nav title="balance">
+        <Nav title="Balance">
             <TitleBar title="Balance" child="Buy Credits   Available: BTC, BCH, LTC, ETH, XMR" />
             <Stack direction={"row"}>
                 <Box>

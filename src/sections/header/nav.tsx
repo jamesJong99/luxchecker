@@ -143,7 +143,7 @@ export default function Nav({ title, children }: Props) {
 
 
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -175,8 +175,8 @@ export default function Nav({ title, children }: Props) {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
-/>
+        theme="colored"
+      />
       <AppBar position="fixed" sx={{ boxShadow: "none" }} open={open}>
         <Toolbar sx={{ minHeight: "45px !important", paddingX: "10px !important" }}>
 
@@ -280,7 +280,7 @@ export default function Nav({ title, children }: Props) {
         <Divider />
         <List sx={{ paddingY: 0 }}>
           {[
-            { icon: <AvTimer />, text: 'dashboard', path: "/dashboard" },
+            { icon: <AvTimer />, text: 'Dashboard', path: "/dashboard" },
             { icon: <CreditCardOutlinedIcon />, text: 'Card Cheker', path: "" },
             { icon: <CreditCardOutlinedIcon />, text: 'AVS Checker', path: "" },
             { icon: <CreditCardOutlinedIcon />, text: 'Dump Cheker', path: "" },
@@ -291,17 +291,17 @@ export default function Nav({ title, children }: Props) {
             { icon: <InfoOutlinedIcon />, text: 'FAQs', path: "" },
             { icon: <ConfirmationNumberIcon />, text: 'Support', path: "" },
             { icon: <SettingsIcon />, text: 'Settings', path: "" },
-            { icon: <MonetizationOn />, text: 'balance', path: "/balance" },
+            { icon: <MonetizationOn />, text: 'Balance', path: "/balance" },
             { icon: <Settings />, text: 'Setting', path: "" },
           ].map((item, index) => (
 
             <ListItem
-              className='nav-li'
-              onClick={() => goPaymentSection()}
+              className={(item.text == title ? 'nav-li' : "")}
+              onClick={() => (item.path == ""?goPaymentSection():"")}
               key={index} sx={{ display: 'block', padding: 0 }}>
               <Link href={item.path}>
                 <ListItemButton
-                  className={(item.text == title ? 'nav-item' : "")}
+                  className={'nav-item '+(item.text == title ? 'nav-item-select' : "")}
                   sx={{
                     padding: 0,
                     paddingLeft: '6px',

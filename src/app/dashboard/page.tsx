@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Page() {
     return <>
-        <Nav title ="dashboard" >
+        <Nav title ="Dashboard" >
             <TitleBar title="Dashboard" child="news" />
             <Stack direction={"row"}>
                 <Box>
