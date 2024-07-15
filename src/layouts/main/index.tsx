@@ -9,9 +9,10 @@ import Nav from "@/sections/header/nav";
 
 type Props = {
   children: React.ReactNode;
+  title: string
 };
 
-export default function AppMainLayout({ children }: Props) {
+export default function AppMainLayout({ children, title }: Props) {
   const theme = useTheme();
 
   return (
@@ -22,7 +23,7 @@ export default function AppMainLayout({ children }: Props) {
         maxWidth: "100%",
       }}
     >
-      <Nav>
+      <Nav title={title}>
       {children}
       </Nav>
 
