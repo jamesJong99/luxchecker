@@ -4,12 +4,12 @@ import { Stack, Box } from "@mui/material";
 import { TitleBar } from "@/components/TitleBar";
 
 export const metadata = {
-    title: 'test: Dashboard',
+    title: 'test: Balance',
 };
 
 export default function Balance() {
     return <>
-        <Nav>
+        <Nav title="balance">
             <TitleBar title="Balance" child="Buy Credits   Available: BTC, BCH, LTC, ETH, XMR" />
             <Stack direction={"row"}>
                 <Box>

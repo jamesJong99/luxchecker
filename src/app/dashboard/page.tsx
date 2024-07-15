@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function Page() {
     return <>
-        <Nav>
-        <TitleBar title="Dashboard" child="news"/>
-        <Stack direction={"row"}>
-            <Box>
-            </Box>
-            <DashboardView />
-        </Stack>
+        <Nav title ="dashboard" >
+            <TitleBar title="Dashboard" child="news" />
+            <Stack direction={"row"}>
+                <Box>
+                </Box>
+                <DashboardView />
+            </Stack>
         </Nav>
     </>
 }

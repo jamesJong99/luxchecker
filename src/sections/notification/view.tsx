@@ -6,7 +6,7 @@ import DashboardModal from "@/components/DashboardModal";
 
 import * as React from 'react';
 import Alert from '@mui/material/Alert';
-export default function DashboardView() {
+export default function NotificationView() {
     return (
         <>
             <Stack paddingY={2} sx={{padding:"0px 20px", width: "100%" }}>

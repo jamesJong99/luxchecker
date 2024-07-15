@@ -1,3 +1,7 @@
+body {
+    font-family:'Open Sans';
+}
+
 a {
     text-decoration: none;
     color: gray;
@@ -16,4 +20,40 @@ a {
     top: 4px;
     border: 8px solid transparent;
     border-width: 14px 10px;
+}
+.nav-li::after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: -1px;
+    bottom: 0;
+    z-index: 1;
+    border: 2px solid #2B7DBC;
+    border-width: 0 2px 0 0;
+}
+.nav-item::after {
+    content: '';  
+    border-right-color: #2B7DBC !important;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    border: 8px solid transparent;
+    border-width: 14px 10px;
+}
+.nav-button::before {
+    content: '';  
+    text-align: center;
+    display: block;
+    height: 0;
+    border-top: 1px solid;
+    border-color: #bdbdbd;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: 20px;
+}
+.nav-item:hover {
+    background-color: #FFF;
 }

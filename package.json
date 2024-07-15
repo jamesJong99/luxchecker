@@ -25,6 +25,7 @@
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
+    "react-toastify": "^10.0.5",
     "resend": "^3.4.0",
     "styled-components": "^6.1.11"
   },
