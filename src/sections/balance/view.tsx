@@ -71,16 +71,19 @@ export default function BalanceView() {
                         For more than 500.000 credits, contact support. We have special discounts for our customers and unbeatable prices for api shop owners.
                     </Typography>
                     <Box width={"100%"} paddingBottom={"20px"}>
-                        <Box width={"40%"} margin={"auto"} display="flex">
-                            <InputLabel id="demo-simple-select-label">Select Coin</InputLabel>
-                            <FormControl fullWidth >
+                        <Box margin={"auto"} display="flex" justifyContent={'center'}>
+                            <InputLabel id="demo-simple-select-label" sx={{color:"#393939", fontWeight:700, lineHeight:"40px"}}>Select Coin</InputLabel>
+                            <FormControl >
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     value={"10"}
+                                    
                                     label="Select Coin"
                                     onChange={handleChange}
+                                    sx={{ padding:0, fontSize:'14px'}}
                                     size="small"
+                                    
                                     defaultValue="10"
                                 >
                                     <MenuItem value={10}>Select CryptoCurrency</MenuItem>

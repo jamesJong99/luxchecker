@@ -320,6 +320,7 @@ export default function Nav({ title, children }: Props) {
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText primary={item.text} sx={{ opacity: open ? 1 : 0 }} />
+                  <ListItemText primary={item.text} sx={{ display: open ? 'none' : 'block' }} className='item-title' />
                 </ListItemButton>
 
               </Link>

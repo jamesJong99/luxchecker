@@ -75,3 +75,8 @@ a {
     overflow: hidden;
     background-color: #629CC9;
 }
+
+.item-title {
+    position: absolute;
+    right: -10px;
+}
