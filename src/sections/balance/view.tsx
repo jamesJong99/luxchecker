@@ -70,14 +70,13 @@ export default function BalanceView() {
                     </Typography>
                     <Box width={"100%"} paddingBottom={"20px"}>
                         <Box margin={"auto"} display="flex" justifyContent={'center'}>
-                            <InputLabel id="demo-simple-select-label" sx={{color:"#393939", fontWeight:700, lineHeight:"40px"}}>Select Coin</InputLabel>
+                            <InputLabel id="demo-simple-select-label" sx={{color:"#393939", fontWeight:700, lineHeight:"40px", marginRight: '10px'}}>Select Coin</InputLabel>
                             <FormControl >
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     value={coin}
-                                    
-                                    label="Select Coin"
+                                    displayEmpty
                                     onChange={(e) => setCoin(e.target.value)}
                                     sx={{ padding:0, fontSize:'14px'}}
                                     size="small"
@@ -87,9 +86,9 @@ export default function BalanceView() {
                                     <MenuItem value={10}>Select CryptoCurrency</MenuItem>
                                     <MenuItem value={20}>Bitcoins (BTC)</MenuItem>
                                     <MenuItem value={30}>Bitcoin Cash (BCH)</MenuItem>
-                                    <MenuItem value={30}>Ethereum (ETH)</MenuItem>
-                                    <MenuItem value={30}>Litecoin (LTC)</MenuItem>
-                                    <MenuItem value={30}>USDT (TRC20) + $3 fee</MenuItem>
+                                    <MenuItem value={40}>Ethereum (ETH)</MenuItem>
+                                    <MenuItem value={50}>Litecoin (LTC)</MenuItem>
+                                    <MenuItem value={60}>USDT (TRC20) + $3 fee</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>
