@@ -314,7 +314,7 @@ export default function LoginView() {
             bgcolor={"#5090C1"}
             padding={0}
           >
-            <Link href="#">
+            <Link href="#" className="link">
               <Typography
                 variant="subtitle2"
                 color={"#FE9"}
@@ -324,7 +324,7 @@ export default function LoginView() {
                 I forgot my password
               </Typography>
             </Link>
-            <Link href="#">
+            <Link href="#" className="link">
               <Typography
                 onClick={() => divChange()}
                 variant="subtitle2"
