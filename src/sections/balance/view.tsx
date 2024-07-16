@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function BalanceView() {
     const [success, setSuccess] = React.useState(0)
     const [coin, setCoin] = React.useState("10");
+    const [pack, setPack] = React.useState("");
     const next = () => {
         if(coin == '10') {
             toast.warning("Please select coin!");
@@ -58,18 +59,17 @@ export default function BalanceView() {
                         <FontAwesomeIcon style={{ marginLeft: "2px", color: "#69AA46" }} icon={faStar} />
                     </Typography>
                     <Box sx={{ paddingLeft: "28%", marginTop: "20px" }}>
-                        <RadioGroup name="radio-buttons-group" sx={{ paddingLeft: "10px", margin: "auto", width: "100%" }}>
-                            <FormControlLabel value="1" control={<Radio size="small" />} label="50 Credits - 13$" />
-                            <FormControlLabel value="2" control={<Radio size="small" />} label="100 Credits - 25$" />
-                            <FormControlLabel value="3" control={<Radio size="small" />} label="250 Credits - 60$" />
-                            <FormControlLabel value="4" control={<Radio size="small" />} label="2500 Credits - 115$" />
-                            <FormControlLabel value="5" control={<Radio size="small" />} label="1.000 Credits - 225$" />
-                            <FormControlLabel value="6" control={<Radio size="small" />} label="5.000 Credits - 1.120$" />
-                            <FormControlLabel value="7" control={<Radio size="small" />} label="10.000 Credits - 2.200$" />
-                            <FormControlLabel value="8" control={<Radio size="small" />} label="50.000 Credits - 7.500$" />
-                            <FormControlLabel value="9" control={<Radio size="small" />} label="100.000 Credits - 13.000$" />
-                            <FormControlLabel value="10" control={<Radio size="small" />} label="200.000 Credits - 22.000$" />
-                            <FormControlLabel value="11" control={<Radio size="small" />} label="500.000 Credits - 50.000$" />
+                        <RadioGroup name="radio-buttons-group" value={2} sx={{ paddingLeft: "10px", margin: "auto", width: "100%" }}>
+                            <FormControlLabel value="250" control={<Radio size="small" />} label="250 Credits - 57$" />
+                            <FormControlLabel value="500" control={<Radio size="small" />} label="500 Credits - 115$" />
+                            <FormControlLabel value="3" control={<Radio size="small" />} label="1.000 Credits - 230$" />
+                            <FormControlLabel value="4" control={<Radio size="small" />} label="2.500 Credits - 575$" />
+                            <FormControlLabel value="5" control={<Radio size="small" />} label="5.000 Credits - 1.150$" />
+                            <FormControlLabel value="6" control={<Radio size="small" />} label="10.000 Credits - 2.300$" />
+                            <FormControlLabel value="7" control={<Radio size="small" />} label="50.000 Credits - 11.500$" />
+                            <FormControlLabel value="8" control={<Radio size="small" />} label="100.000 Credits - 23.000$" />
+                            <FormControlLabel value="9" control={<Radio size="small" />} label="200.000 Credits - 46.000$" />
+                            <FormControlLabel value="10" control={<Radio size="small" />} label="500.000 Credits - 115.000$" />
                         </RadioGroup>
                     </Box>
                     <Typography fontFamily={"'Open Sans'"} fontSize={"13px"} paddingX={4} marginTop="20px" color="#737373" sx={{ marginTop: "20px" }}>
@@ -89,10 +89,10 @@ export default function BalanceView() {
                                     size="small"
                                     defaultValue={"10"}
                                 >
-                                    <MenuItem value={"10"}>Select CryptoCurrency</MenuItem>
-                                    <MenuItem value={"1"}>BitCoin</MenuItem>
-                                    <MenuItem value={"2"}>XmlCoin</MenuItem>
-                                    <MenuItem value={"3"}>LiteCoin</MenuItem>
+                                    <MenuItem value={"10"}>Select crypto currency</MenuItem>
+                                    <MenuItem value={"1"}>Bitcoin(btc)</MenuItem>
+                                    <MenuItem value={"2"}>Stellar(xlm)</MenuItem>
+                                    <MenuItem value={"3"}>Litecoin(LTC)</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>
