@@ -34,8 +34,6 @@ import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import SettingsIcon from '@mui/icons-material/Settings';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 import NoPageModal from "@/components/NoPageModal";
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
@@ -238,7 +236,7 @@ export default function Nav({ title, children }: Props) {
                 >
                   <Stack direction={"row"} sx={{ border: "none" }}>
                     <Typography variant="subtitle2" gutterBottom sx={{ marginBottom: 0, border: "none" }}>
-                      <small>welcome,</small> jack1337
+                      <small>welcome,</small> User
                     </Typography>
                     <ArrowDropDownOutlinedIcon sx={{ margin: "auto" }} />
                   </Stack>

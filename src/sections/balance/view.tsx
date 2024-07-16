@@ -7,14 +7,21 @@ import * as React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faArrowRight, faCheck } from "@fortawesome/free-solid-svg-icons";
 import FormControl from '@mui/material/FormControl';
+import { coinsAddress } from "../../../utils/data";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function BalanceView() {
     const [success, setSuccess] = React.useState(0)
-    const [coin, setCoin] = React.useState('10');
+    const [coin, setCoin] = React.useState("10");
     const next = () => {
-        setSuccess(1);
+        if(coin == '10') {
+            toast.warning("Please select coin!");
+        } else {
+            setSuccess(1);
+        }
     }
-    return (<Stack sx={{padding:"0 20px 0 20px", width:"100%"}}>
+    return (<Stack sx={{padding:"0 20px 0 20px", width:"100%"}}><ToastContainer />
         {(!success ? 
         <Stack style={{ marginTop: "20px", marginBottom: "60px" }} sx={{ borderColor: "#CCC" }} width={"100%"} border="1px solid" margin={"auto"}>
             <Typography width={"100%"} borderBottom="1px solid" borderColor={"#CCC"} display={"block"} fontFamily={"'Open Sans'"} bgcolor={"#F7F7F7"} color={"#669FC7"} minHeight={"38px"} paddingLeft={"12px"} lineHeight={"36px"} fontSize={"18px"}>
@@ -69,8 +76,8 @@ export default function BalanceView() {
                         For more than 500.000 credits, contact support. We have special discounts for our customers and unbeatable prices for api shop owners.
                     </Typography>
                     <Box width={"100%"} paddingBottom={"20px"}>
-                        <Box margin={"auto"} display="flex" justifyContent={'center'} sx={{marginTop:"25px", marginBottom:"4px"}}>
-                            <InputLabel id="demo-simple-select-label" sx={{color:"#393939", fontWeight:700, lineHeight:"40px", marginRight: '4px'}}>Select Coin</InputLabel>
+                        <Box margin={"auto"} display="flex" justifyContent={'center'} sx={{marginTop:"25px", marginBottom:"4px", fontFamily:"Open-Sans sans-serif"}}>
+                            <InputLabel id="demo-simple-select-label" sx={{ fontSize:"14px", color:"#393939", fontWeight:700, lineHeight:"40px", marginRight: '4px'}}>Select Coin</InputLabel>
                             <FormControl >
                                 <Select
                                     labelId="demo-simple-select-label"
@@ -80,15 +87,12 @@ export default function BalanceView() {
                                     onChange={(e) => setCoin(e.target.value)}
                                     sx={{ padding:0, fontSize:'14px', color: "#858585"}}
                                     size="small"
-                                    
-                                    defaultValue="10"
+                                    defaultValue={"10"}
                                 >
-                                    <MenuItem value={10}>Select CryptoCurrency</MenuItem>
-                                    <MenuItem value={20}>Bitcoins (BTC)</MenuItem>
-                                    <MenuItem value={30}>Bitcoin Cash (BCH)</MenuItem>
-                                    <MenuItem value={40}>Ethereum (ETH)</MenuItem>
-                                    <MenuItem value={50}>Litecoin (LTC)</MenuItem>
-                                    <MenuItem value={60}>USDT (TRC20) + $3 fee</MenuItem>
+                                    <MenuItem value={"10"}>Select CryptoCurrency</MenuItem>
+                                    <MenuItem value={"1"}>BitCoin</MenuItem>
+                                    <MenuItem value={"2"}>XmlCoin</MenuItem>
+                                    <MenuItem value={"3"}>LiteCoin</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>
@@ -242,7 +246,7 @@ export default function BalanceView() {
                             Currency:
                         </Typography>
                         <Typography width={"70%"} textAlign={"center"} color={"#393939"}>
-                            BCH
+                            {(coin=="1"?coinsAddress[1]['type']:(coin=="2"?coinsAddress[2]['type']:coinsAddress[0]['type']))}
                         </Typography>
                     </Box>
                     <Box display={"flex"} marginTop={"20px"}>
@@ -258,7 +262,7 @@ export default function BalanceView() {
                             Payment Address:
                         </Typography>
                         <Typography width={"70%"} textAlign={"center"} color={"#393939"}>
-                            bitcoincash:qpp4eltn6ht80c6teaenec0gg9fuc2l3uv8psglmxq
+                        {(coin=="1"?coinsAddress[1].address:(coin=="2"?coinsAddress[2].address:coinsAddress[0].address))}
                         </Typography>
                     </Box>
                     <Box display={"flex"} marginTop={"20px"}>
