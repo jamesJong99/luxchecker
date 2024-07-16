@@ -59,7 +59,7 @@ export default function BalanceView() {
                         <FontAwesomeIcon style={{ marginLeft: "2px", color: "#69AA46" }} icon={faStar} />
                     </Typography>
                     <Box sx={{ paddingLeft: "28%", marginTop: "20px" }}>
-                        <RadioGroup name="radio-buttons-group" value={2} sx={{ paddingLeft: "10px", margin: "auto", width: "100%" }}>
+                        <RadioGroup name="radio-buttons-group" sx={{ paddingLeft: "10px", margin: "auto", width: "100%" }}>
                             <FormControlLabel value="250" control={<Radio size="small" />} label="250 Credits - 57$" />
                             <FormControlLabel value="500" control={<Radio size="small" />} label="500 Credits - 115$" />
                             <FormControlLabel value="3" control={<Radio size="small" />} label="1.000 Credits - 230$" />
