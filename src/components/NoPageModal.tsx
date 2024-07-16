@@ -4,76 +4,63 @@ import { styled, css } from '@mui/system';
 import { Modal as BaseModal } from '@mui/base/Modal';
 import { Typography } from '@mui/material';
 
-const DashboardModal = () => {
-    const [open, setOpen] = React.useState(true);
-    const handleClose = () => {
-        setOpen(false)
-    };
-    React.useEffect(()=> {
-    }, [open])
-    return (
-        <div>
-            {(open?<Modal
-                aria-labelledby="keep-mounted-modal-title"
-                aria-describedby="keep-mounted-modal-description"
-                open={open}
-                onClose={handleClose}
-                slots={{ backdrop: StyledBackdrop }}
-                keepMounted
-                style={{ textAlign: "center" }}
-            >
-                <ModalContent sx={{ width: "60%" }}>
-                    <h4 id="keep-mounted-modal-title" className="modal-title" style={{ textAlign: "center" }}>
-                        Alert/Attention/Notice
-                    </h4>
-                    <Typography color={"#69AA46"} textAlign="center" marginTop={"20px"} style={{ textDecoration: "underline" }}>Buying POS/MERCHANT Accounts. Sellers contact us in tickets</Typography>
-                    <Typography color={"#393939"} textAlign="center" marginTop={"20px"}>We are getting many tickets from users claiming their credits got used or their password got changed.</Typography>
-                    <Typography color={"#393939"} textAlign="center" marginTop={"20px"}>The ONLY reason for it to happen is because users visit scam domains that look similar to luxchecker and sharing their login credentials with them and once they get your login credentials they will either use your credits OR change your password.</Typography>
-                    <Typography color={"#393939"} textAlign="center" marginTop={"20px"}>We have been giving alot of warnings on our forums-threads and our login page still people are falling for this trap.</Typography>
-                    <Typography fontSize={"16px"} fontWeight={700} textAlign="center" marginTop={"2px"}>NEVER USE GOOGLE OR ANY SEARCH ENGINE TO SEARCH FOR LUXCHECKER DOMAIN.</Typography>
-                    <Typography color={"#393939"} textAlign="center" marginTop={"20px"}>There are the following three (clearnet) domain and one (tor) domain that belongs to us</Typography>
-                    <Typography fontSize={"16px"} fontWeight={700} textAlign="center" marginTop={"2px"}>1: luxchecker.pm</Typography>
-                    <Typography fontSize={"16px"} fontWeight={700} textAlign="center" marginTop={"2px"}>2: luxchecker.pw
-                    </Typography>
-                    <Typography fontSize={"16px"} fontWeight={700} textAlign="center" marginTop={"2px"}>3: luxchecker.vc</Typography>
-                    <Typography fontSize={"16px"} fontWeight={700} textAlign="center" marginTop={"2px"}>4: luxchkr35xj7gis6u4xu67f4theumzhbw43pebz6lc6qsy7ahkzfmzqd.onion (TOR v3)</Typography>
-                    <Typography color={"#393939"} textAlign="center" marginTop={"20px"}>All other domains are SCAM/FRAUD. You will lose your account and your credits if you enter your login credentials into them.</Typography>
-                </ModalContent>
-            </Modal>:<></>)}
-        </div>
-    );
+interface props {
+  open: boolean,
+  handleClose: Function
+}
+const NoPageModal = ({ open, handleClose }: props) => {
+  return (
+    <div>
+      {(open ? <Modal
+        aria-labelledby="keep-mounted-modal-title"
+        aria-describedby="keep-mounted-modal-description"
+        open={open}
+        onClose={() => handleClose()}
+        slots={{ backdrop: StyledBackdrop }}
+        keepMounted
+        style={{ textAlign: "center" }}
+      >
+        <ModalContent sx={{ width: "60%" }}>
+          <h4 id="keep-mounted-modal-title" className="modal-title" style={{ textAlign: "center" }}>
+            Alert/Attention/Notice
+          </h4>
+          <Typography color={"#69AA46"} textAlign="center" marginTop={"20px"} style={{ textDecoration: "underline" }}>Please activate your account by depositing minimum $50 for accessing this page!!!</Typography>
+        </ModalContent>
+      </Modal> : <></>)}
+    </div>
+  );
 }
 
-const Backdrop:React.FC = (props) => {
-    const { open, className, ...other }:any = props;
-    return (
-        <div
-            className={clsx({ 'base-Backdrop-open': open }, className)}
-            {...other}
-        />
-    );
+const Backdrop: React.FC = (props) => {
+  const { open, className, ...other }: any = props;
+  return (
+    <div
+      className={clsx({ 'base-Backdrop-open': open }, className)}
+      {...other}
+    />
+  );
 };
 
 const blue = {
-    200: '#99CCFF',
-    300: '#66B2FF',
-    400: '#3399FF',
-    500: '#007FFF',
-    600: '#0072E5',
-    700: '#0066CC',
+  200: '#99CCFF',
+  300: '#66B2FF',
+  400: '#3399FF',
+  500: '#007FFF',
+  600: '#0072E5',
+  700: '#0066CC',
 };
 
 const grey = {
-    50: '#F3F6F9',
-    100: '#E5EAF2',
-    200: '#DAE2ED',
-    300: '#C7D0DD',
-    400: '#B0B8C4',
-    500: '#9DA8B7',
-    600: '#6B7A90',
-    700: '#434D5B',
-    800: '#303740',
-    900: '#1C2025',
+  50: '#F3F6F9',
+  100: '#E5EAF2',
+  200: '#DAE2ED',
+  300: '#C7D0DD',
+  400: '#B0B8C4',
+  500: '#9DA8B7',
+  600: '#6B7A90',
+  700: '#434D5B',
+  800: '#303740',
+  900: '#1C2025',
 };
 
 const Modal = styled(BaseModal)(`
@@ -101,7 +88,7 @@ const StyledBackdrop = styled(Backdrop)`
 `;
 
 const ModalContent = styled('div')(
-    ({ theme }) => css`
+  ({ theme }) => css`
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 500;
     text-align: start;
@@ -135,7 +122,7 @@ const ModalContent = styled('div')(
 );
 
 const TriggerButton = styled('button')(
-    ({ theme }) => css`
+  ({ theme }) => css`
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
@@ -165,4 +152,4 @@ const TriggerButton = styled('button')(
   `,
 );
 
-export default DashboardModal
+export default NoPageModal;

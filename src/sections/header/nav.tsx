@@ -37,6 +37,9 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import NoPageModal from "@/components/NoPageModal";
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+
 const drawerWidth = 190;
 const listItems = [
   {
@@ -144,6 +147,7 @@ export default function Nav({ title, children }: Props) {
 
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
+  const [modal, setModal] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -154,29 +158,22 @@ export default function Nav({ title, children }: Props) {
     setAnchorEl(null);
   };
 
+  const modalClose = () => {
+    setModal(false);
+  };
+
   const handleDrawerChange = () => {
     setOpen(!open);
   };
 
   const goPaymentSection = () => {
-    toast.error("Please activate your account by depositing minimum $50 for accessing this page!!!");
+    setModal(true);
   }
 
   return (
     <Box sx={{ display: 'flex', padding: 0 }}>
       <CssBaseline />
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
+      <NoPageModal open={modal} handleClose = {modalClose} />
       <AppBar position="fixed" sx={{ boxShadow: "none" }} open={open}>
         <Toolbar sx={{ minHeight: "45px !important", paddingX: "10px !important" }}>
 
@@ -293,6 +290,7 @@ export default function Nav({ title, children }: Props) {
             { icon: <SettingsIcon />, text: 'Settings', path: "" },
             { icon: <MonetizationOn />, text: 'Balance', path: "/balance" },
             { icon: <Settings />, text: 'Setting', path: "" },
+            { icon: <PowerSettingsNewIcon />, text: 'Logout', path: "/" },
           ].map((item, index) => (
 
             <ListItem
@@ -320,7 +318,6 @@ export default function Nav({ title, children }: Props) {
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText primary={item.text} sx={{ opacity: open ? 1 : 0 }} />
-                  <ListItemText primary={item.text} sx={{ display: open ? 'none' : 'block' }} className='item-title' />
                 </ListItemButton>
 
               </Link>

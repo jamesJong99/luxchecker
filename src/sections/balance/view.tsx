@@ -10,9 +10,7 @@ import FormControl from '@mui/material/FormControl';
 
 export default function BalanceView() {
     const [success, setSuccess] = React.useState(0)
-    const handleChange = () => {
-
-    }
+    const [coin, setCoin] = React.useState('10');
     const next = () => {
         setSuccess(1);
     }
@@ -77,10 +75,10 @@ export default function BalanceView() {
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={"10"}
+                                    value={coin}
                                     
                                     label="Select Coin"
-                                    onChange={handleChange}
+                                    onChange={(e) => setCoin(e.target.value)}
                                     sx={{ padding:0, fontSize:'14px'}}
                                     size="small"
                                     
