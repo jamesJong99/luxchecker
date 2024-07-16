@@ -69,8 +69,8 @@ export default function BalanceView() {
                         For more than 500.000 credits, contact support. We have special discounts for our customers and unbeatable prices for api shop owners.
                     </Typography>
                     <Box width={"100%"} paddingBottom={"20px"}>
-                        <Box margin={"auto"} display="flex" justifyContent={'center'}>
-                            <InputLabel id="demo-simple-select-label" sx={{color:"#393939", fontWeight:700, lineHeight:"40px", marginRight: '10px'}}>Select Coin</InputLabel>
+                        <Box margin={"auto"} display="flex" justifyContent={'center'} sx={{marginTop:"25px", marginBottom:"4px"}}>
+                            <InputLabel id="demo-simple-select-label" sx={{color:"#393939", fontWeight:700, lineHeight:"40px", marginRight: '4px'}}>Select Coin</InputLabel>
                             <FormControl >
                                 <Select
                                     labelId="demo-simple-select-label"
@@ -78,7 +78,7 @@ export default function BalanceView() {
                                     value={coin}
                                     displayEmpty
                                     onChange={(e) => setCoin(e.target.value)}
-                                    sx={{ padding:0, fontSize:'14px'}}
+                                    sx={{ padding:0, fontSize:'14px', color: "#858585"}}
                                     size="small"
                                     
                                     defaultValue="10"
@@ -191,6 +191,7 @@ export default function BalanceView() {
             <Box marginX="5px" marginTop={"20px"} borderTop={"1px solid"} borderColor={"#CCC"} display={"flex"} justifyContent={"end"}>
                 <Link href="#successPart">
                     <Button
+                        className="btn-register"
                         type="submit"
                         variant="contained"
                         style={{ fontFamily: "Open Sans" }}
@@ -198,7 +199,7 @@ export default function BalanceView() {
                         onClick={() => next()}
                     >
                         Next
-                        <FontAwesomeIcon style={{ marginLeft: "4px", marginTop: "5px" }} icon={faArrowRight} className="fas fa-check"
+                        <FontAwesomeIcon style={{ marginLeft: "4px" }} icon={faArrowRight} className="fas fa-check"
                         />
                     </Button>
                 </Link>
