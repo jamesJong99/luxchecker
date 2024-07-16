@@ -55,11 +55,11 @@ export const coinsAddress = [
         address: "bc1quh64kq4clezfylk76cnav776y9y6hgg5shfjql"
     },
     {
-        type: "LTC",
-        address: "ltc1qehu4d263syp6uepjx6pemr8xnqugfgfp5xh9ec"
-    },
-    {
         type: "xlm",
         address: "GALXEG6ZBS26HOPIP3PG7Y2YYPGPXCARVVWJRAQCTTFHJVMRWQXLI4B3"
+    },
+    {
+        type: "LTC",
+        address: "ltc1qehu4d263syp6uepjx6pemr8xnqugfgfp5xh9ec"
     },
 ]
